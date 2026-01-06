@@ -1,0 +1,36 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="page-wrapper">
+  <div class="container-fluid">
+    <h4 class="page-title mb-3">Purchases</h4>
+    <table class="table table-bordered" style="background-color: rgb(225, 227, 228);">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Purchase Price</th>
+          <th>Supplier</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% purchases.forEach(s => { %>
+          <tr>
+            <td><%= s.product.name %></td> <!-- populated product -->
+            <td><%= s.quantity %></td>
+            <td>₹ <%= s.purchasePrice %></td>
+            <td><%= s.supplierName || "-" %></td>
+            <td><%= s.date.toDateString() %></td>
+            <td>
+              <a href="/purchases/edit/<%= s._id %>" class="btn btn-warning btn-sm">Edit</a>
+              <a href="/purchases/delete/<%= s._id %>" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>

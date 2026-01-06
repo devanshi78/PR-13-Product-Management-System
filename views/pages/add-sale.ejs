@@ -1,0 +1,80 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="page-wrapper">
+  <div class="page-breadcrumb">
+    <div class="row">
+      <div class="col-12 d-flex no-block align-items-center">
+        <h4 class="page-title">Add Sale</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <form method="post" action="/sales/add">
+            <div class="card-body">
+              <h4 class="card-title">Sale Details</h4>
+
+              <!-- Product Selection -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">Product</label>
+                <div class="col-sm-9">
+                  <select name="product" class="form-select" required>
+                    <option disabled selected>--- Select Product ---</option>
+                    <% products.forEach(p => { %>
+                      <option value="<%= p._id %>"><%= p.name %></option>
+                    <% }) %>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Quantity -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">Quantity</label>
+                <div class="col-sm-9">
+                  <input type="number" name="quantity" class="form-control" required>
+                </div>
+              </div>
+
+              <!-- Selling Price -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">Selling Price</label>
+                <div class="col-sm-9">
+                  <input type="number" name="sellingPrice" class="form-control" required>
+                </div>
+              </div>
+
+              <!-- Customer Name -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">Customer Name</label>
+                <div class="col-sm-9">
+                  <input type="text" name="customerName" class="form-control">
+                </div>
+              </div>
+
+              <!-- Sale Date -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">Sale Date</label>
+                <div class="col-sm-9">
+                  <input type="date" name="date" class="form-control" value="<%= new Date().toISOString().split('T')[0] %>">
+                </div>
+              </div>
+
+            </div>
+
+            <div class="border-top">
+              <div class="card-body text-end">
+                <button type="submit" class="btn btn-success">Add Sale</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>

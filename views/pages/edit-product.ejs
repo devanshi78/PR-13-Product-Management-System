@@ -1,0 +1,173 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="page-wrapper">
+
+  <!-- Breadcrumb -->
+  <div class="page-breadcrumb">
+    <div class="row">
+      <div class="col-12 d-flex align-items-center">
+        <h4 class="page-title">Edit Product</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- Container -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+
+        <div class="card">
+          <form method="post"
+                action="/product/edit/<%= data._id %>"
+                enctype="multipart/form-data">
+
+            <div class="card-body">
+              <h4 class="card-title">Product Details</h4>
+
+              <!-- Image -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">
+                  Change Image
+                </label>
+                <div class="col-sm-9">
+                  <input type="file" name="image" class="form-control">
+                </div>
+              </div>
+
+              <!-- Current Image -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">
+                  Current Image
+                </label>
+                <div class="col-sm-9">
+                  <img src="/<%= data.image %>"
+                       style="width:100px;height:100px;object-fit:cover;border-radius:6px">
+                </div>
+              </div>
+
+              <!-- Name -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">
+                  Product Name
+                </label>
+                <div class="col-sm-9">
+                  <input type="text" name="name" class="form-control"
+                         value="<%= data.name %>" required>
+                </div>
+              </div>
+
+              <!-- SKU -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">
+                  SKU
+                </label>
+                <div class="col-sm-9">
+                  <input type="text" name="sku" class="form-control"
+                         value="<%= data.sku %>" required>
+                </div>
+              </div>
+
+              <!-- Price -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">
+                  Price
+                </label>
+                <div class="col-sm-9">
+                  <input type="number" name="price" class="form-control"
+                         value="<%= data.price %>" required>
+                </div>
+              </div>
+
+              <!-- Discount -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">
+                  Discount (%)
+                </label>
+                <div class="col-sm-9">
+                  <input type="number" name="discount" class="form-control"
+                         value="<%= data.discount %>">
+                </div>
+              </div>
+
+              <!-- Brand -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">
+                  Brand
+                </label>
+                <div class="col-sm-9">
+                  <input type="text" name="brand" class="form-control"
+                         value="<%= data.brand %>">
+                </div>
+              </div>
+
+              <!-- Model Number -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">
+                  Model Number
+                </label>
+                <div class="col-sm-9">
+                  <input type="text" name="modelNumber" class="form-control"
+                         value="<%= data.modelNumber %>">
+                </div>
+              </div>
+
+              <!-- Description -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">
+                  Description
+                </label>
+                <div class="col-sm-9">
+                  <textarea name="description" class="form-control"
+                            rows="3" required><%= data.description %></textarea>
+                </div>
+              </div>
+
+              <!-- Category -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">
+                    Category
+                </label>
+                <div class="col-sm-9">
+                    <select name="category" class="form-select" required>
+                    <% categories.forEach(category => { %>
+                        <option value="<%= category._id %>"
+                        <%= category._id.toString() === data.category.toString() ? "selected" : "" %>>
+                        <%= category.name %>
+                        </option>
+                    <% }) %>
+                    </select>
+                </div>
+            </div>
+
+
+              <!-- Sub Category -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">
+                  Sub Category
+                </label>
+                <div class="col-sm-9">
+                  <input type="text" name="subCategory" class="form-control"
+                         value="<%= data.subCategory %>">
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Submit -->
+            <div class="border-top">
+              <div class="card-body text-end">
+                <button type="submit" class="btn btn-primary">
+                  Update Product
+                </button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,77 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="page-wrapper">
+  <div class="page-breadcrumb">
+    <div class="row">
+      <div class="col-12 d-flex no-block align-items-center">
+        <h4 class="page-title">Edit Sale</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <form method="post" action="/sales/edit/<%= sale._id %>">
+            <div class="card-body">
+              <h4 class="card-title">Sale Details</h4>
+
+              <!-- Product -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">Product</label>
+                <div class="col-sm-9">
+                  <select name="product" class="form-control" required>
+                    <% products.forEach(p => { %>
+                      <option value="<%= p._id %>" 
+                        <%= p._id.toString() === sale.product._id.toString() ? "selected" : "" %>>
+                        <%= p.name %>
+                      </option>
+                    <% }) %>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Quantity -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">Quantity</label>
+                <div class="col-sm-9">
+                  <input type="number" name="quantity" class="form-control" 
+                         value="<%= sale.quantity %>" required>
+                </div>
+              </div>
+
+              <!-- Selling Price -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">Selling Price</label>
+                <div class="col-sm-9">
+                  <input type="number" name="sellingPrice" class="form-control" 
+                         value="<%= sale.sellingPrice %>" required>
+                </div>
+              </div>
+
+              <!-- Customer Name -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-end col-form-label">Customer Name</label>
+                <div class="col-sm-9">
+                  <input type="text" name="customerName" class="form-control" 
+                         value="<%= sale.customerName %>">
+                </div>
+              </div>
+
+            </div>
+
+            <div class="border-top">
+              <div class="card-body text-end">
+                <button type="submit" class="btn btn-primary">Update Sale</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,82 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="page-wrapper">
+  <div class="page-breadcrumb">
+    <div class="row">
+      <div class="col-12 d-flex align-items-center">
+        <h4 class="page-title">Edit Purchase</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <form method="post" action="/purchases/edit/<%= purchase._id %>">
+            <div class="card-body">
+              <h4 class="card-title">Purchase Details</h4>
+
+              <!-- Product -->
+              <div class="form-group row mb-3">
+                <label class="col-sm-3 text-end col-form-label">Product</label>
+                <div class="col-sm-9">
+                  <select name="product" class="form-select" required>
+                    <option value="">--- Select Product ---</option>
+                    <% products.forEach(p => { %>
+                      <option value="<%= p._id %>" 
+                        <%= p._id.toString() === purchase.product._id.toString() ? 'selected' : '' %>>
+                        <%= p.name %>
+                      </option>
+                    <% }) %>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Quantity -->
+              <div class="form-group row mb-3">
+                <label class="col-sm-3 text-end col-form-label">Quantity</label>
+                <div class="col-sm-9">
+                  <input type="number" name="quantity" class="form-control" value="<%= purchase.quantity %>" required>
+                </div>
+              </div>
+
+              <!-- Purchase Price -->
+              <div class="form-group row mb-3">
+                <label class="col-sm-3 text-end col-form-label">Purchase Price</label>
+                <div class="col-sm-9">
+                  <input type="number" name="purchasePrice" class="form-control" value="<%= purchase.purchasePrice %>" required>
+                </div>
+              </div>
+
+              <!-- Supplier Name -->
+              <div class="form-group row mb-3">
+                <label class="col-sm-3 text-end col-form-label">Supplier Name</label>
+                <div class="col-sm-9">
+                  <input type="text" name="supplierName" class="form-control" value="<%= purchase.supplierName %>">
+                </div>
+              </div>
+
+              <!-- Purchase Date -->
+              <div class="form-group row mb-3">
+                <label class="col-sm-3 text-end col-form-label">Date</label>
+                <div class="col-sm-9">
+                  <input type="date" name="date" class="form-control" value="<%= purchase.date.toISOString().substring(0,10) %>">
+                </div>
+              </div>
+
+            </div>
+
+            <div class="border-top">
+              <div class="card-body text-end">
+                <button type="submit" class="btn btn-primary">Update Purchase</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>

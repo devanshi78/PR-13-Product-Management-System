@@ -1,0 +1,67 @@
+<%- include('../partials/header.ejs') %>
+
+<style>
+  .sale-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e8e8e8;
+    padding: 15px;
+  }
+
+  .sale-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  }
+
+  .sale-info h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #212121;
+  }
+
+  .sale-info p {
+    color: #757575;
+    margin: 0;
+  }
+
+  .action-btns a {
+    margin-right: 8px;
+  }
+</style>
+
+<div class="page-wrapper">
+  <div class="page-breadcrumb">
+    <div class="row">
+      <div class="col-12 d-flex no-block align-items-center">
+        <h4 class="page-title">Sales</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row px-2">
+      <% sales.forEach(sale => { %>
+        <div class="col-md-4 col-lg-3 col-sm-6 mb-4">
+          <div class="sale-card">
+            <div class="sale-info">
+              <h5><%= sale.product.name %></h5>
+              <p><strong>Quantity:</strong> <%= sale.quantity %></p>
+              <p><strong>Selling Price:</strong> ₹ <%= sale.sellingPrice %></p>
+              <p><strong>Customer:</strong> <%= sale.customerName || 'N/A' %></p>
+              <p><strong>Date:</strong> <%= new Date(sale.date).toLocaleDateString() %></p>
+            </div>
+            <div class="action-btns mt-3">
+              <a href="/sales/edit/<%= sale._id %>" class="btn btn-warning btn-sm">Edit</a>
+              <a href="/sales/delete/<%= sale._id %>" class="btn btn-danger btn-sm">Delete</a>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>
