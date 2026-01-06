@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";
 import session from "express-session";
 
 const app = express();
-const port = dotenv.PORT || 3001;
+const port = process.env.PORT || dotenv.PORT || 3001;
 
 app.set('view engine','ejs');
 app.use(express.static("public"));

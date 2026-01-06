@@ -38,7 +38,7 @@ This application supports **Admin and User roles**, product management, categori
 
 🔗 **Live Demo:**  
 ```
-https://your-live-project-link.com
+https://pr-13-product-management-system.onrender.com
 ```
 
 ---
@@ -118,7 +118,6 @@ npm start
 
 ## 🖼️ Screenshots
 
-Add screenshots inside a `screenshots` folder.
 
 ---
 
@@ -133,4 +132,9 @@ Add screenshots inside a `screenshots` folder.
 ---
 
 ## ✨ Author
-Developed by **Devu**
+
+**Devanshi Parekh**
+
+## 📄 License
+
+This project is for **learning and educational purposes**.
