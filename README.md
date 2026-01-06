@@ -38,7 +38,7 @@ This application supports **Admin and User roles**, product management, categori
 
 🔗 **Live Demo:**  
 ```
-https://pr-13-product-management-system.onrender.com
+[https://pr-13-product-management-system.onrender.com](https://pr-13-product-management-system.onrender.com)
 ```
 
 ---
@@ -94,7 +94,7 @@ PR-13-PRODUCT-MANAGEMENT
 
 1. Clone the repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/your-username/PR-13-Product-Management-System.git
 ```
 
 2. Install dependencies
