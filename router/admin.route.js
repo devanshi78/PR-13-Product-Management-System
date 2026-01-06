@@ -1,6 +1,6 @@
 import { Router } from "express";
 import adminController from "../controllers/admin.controller.js";
-import userAuth from "../middlewares/userauth.js";
+import userAuth from "../middlewares/userAuth.js";
 import imageUpload from "../middlewares/imageUpload.js";
 
 const adminRouter = Router();
