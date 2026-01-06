@@ -94,7 +94,11 @@ PR-13-PRODUCT-MANAGEMENT
 
 1. Clone the repository
 ```bash
+<<<<<<< HEAD
 git clone https://github.com/your-username/PR-13-Product-Management-System.git
+=======
+git clone https://github.com/devanshi78/PR-13-Product-Management-System
+>>>>>>> 69e0245ce49a0e007a283c3240d45b543e249c0c
 ```
 
 2. Install dependencies
@@ -165,5 +169,6 @@ npm start
 **Devanshi Parekh**
 
 ## 📄 License
+
 
 This project is for **learning and educational purposes**.
