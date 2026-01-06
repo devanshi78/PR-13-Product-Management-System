@@ -118,6 +118,35 @@ npm start
 
 ## 🖼️ Screenshots
 
+### 🔐 Admin Panel
+
+#### ✅ Admin Login Page
+![Admin Login](./public/images/admin-login.png)
+
+#### ✅ Admin Signup Page
+![Admin Signup](./public/images/admin-signup.png)
+
+#### ✅ Dashboard Page
+![Dashboard](./public/images/dashboard.png)
+
+#### ✅ View Categories
+![View Category](./public/images/admin-view-category.png)
+
+#### ✅ View Products
+![View Product](./public/images/admin-view-product.png)
+
+#### ✅ View Sales
+![View Sale](./public/images/admin-view-sale.png)
+
+#### ✅ View Purchases
+![View Purchase](./public/images/admin-view-purchase.png)
+
+---
+
+### 👤 User Panel
+
+#### 🛍️ View Products
+![User View Product](./public/images/user-view-product.png)
 
 ---
 
