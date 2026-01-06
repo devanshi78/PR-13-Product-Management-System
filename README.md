@@ -22,7 +22,7 @@ This application supports **Admin and User roles**, product management, categori
 
 ---
 
-## 🔐 Default Login Credentials
+## 🔐 Default Login Credentials 
 
 ### 👨‍💼 Admin Login
 - **Email:** `admin@gmail.com`
