@@ -26,7 +26,8 @@ const productController = ({
                 .find({})
                 .populate('category')
             return res.render('./pages/view-product.ejs', {
-                products
+                products,
+                user : req.user
             })
         } catch (error) {
             console.log(error.message);

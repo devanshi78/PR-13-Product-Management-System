@@ -17,7 +17,7 @@
       <tbody>
         <% purchases.forEach(s => { %>
           <tr>
-            <td><%= s.product.name %></td> <!-- populated product -->
+            <td><%= s.product ? s.product.name : 'Product Deleted' %></td>
             <td><%= s.quantity %></td>
             <td>₹ <%= s.purchasePrice %></td>
             <td><%= s.supplierName || "-" %></td>

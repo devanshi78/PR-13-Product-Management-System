@@ -11,17 +11,6 @@ adminRouter.post('/signup',imageUpload,adminController.signupUser);
 adminRouter.get('/login',adminController.loginUserPage);
 adminRouter.post('/login',adminController.loginUser);
 
-// forgot password
-adminRouter.post('/forgot-password',adminController.forgotPassword);
-
-// OTP verfication
-adminRouter.get('/otpVerify',adminController.otpVerifyPage);
-adminRouter.post('/otpVerify',adminController.otpVerify);
-
-// New Password
-adminRouter.get('/new-Password',adminController.newPassPage);
-adminRouter.post('/new-Password',adminController.newPass);
-
 adminRouter.use(userAuth);
 adminRouter.get('/',adminController.homepage);
 adminRouter.get('/profile',adminController.profilePage);

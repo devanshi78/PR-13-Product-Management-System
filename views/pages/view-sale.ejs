@@ -47,7 +47,7 @@
         <div class="col-md-4 col-lg-3 col-sm-6 mb-4">
           <div class="sale-card">
             <div class="sale-info">
-              <h5><%= sale.product.name %></h5>
+              <h5><%= sale.product ? sale.product.name : 'Product Deleted' %></h5>
               <p><strong>Quantity:</strong> <%= sale.quantity %></p>
               <p><strong>Selling Price:</strong> ₹ <%= sale.sellingPrice %></p>
               <p><strong>Customer:</strong> <%= sale.customerName || 'N/A' %></p>
