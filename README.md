@@ -22,7 +22,7 @@ This application supports **Admin and User roles**, product management, categori
 
 ---
 
-## 🔐 Default Login Credentials 
+## 🔐 Default Login Credentials
 
 ### 👨‍💼 Admin Login
 - **Email:** `admin@gmail.com`
@@ -37,9 +37,7 @@ This application supports **Admin and User roles**, product management, categori
 ## 🌐 Live Project Link
 
 🔗 **Live Demo:**  
-```
-[https://pr-13-product-management-system.onrender.com](https://pr-13-product-management-system.onrender.com)
-```
+👉 [https://pr-13-product-management-system.onrender.com](https://pr-13-product-management-system.onrender.com)
 
 ---
 
@@ -94,11 +92,7 @@ PR-13-PRODUCT-MANAGEMENT
 
 1. Clone the repository
 ```bash
-<<<<<<< HEAD
 git clone https://github.com/your-username/PR-13-Product-Management-System.git
-=======
-git clone https://github.com/devanshi78/PR-13-Product-Management-System
->>>>>>> 69e0245ce49a0e007a283c3240d45b543e249c0c
 ```
 
 2. Install dependencies
